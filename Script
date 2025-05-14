@@ -1,0 +1,15 @@
+function backupSpreadsheet() {
+  const backupFolderId = "YOUR_BACKUP_FOLDER_ID"; // Replace with your Drive folder ID
+  const folder = DriveApp.getFolderById(backupFolderId);
+
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const fileId = spreadsheet.getId();
+  const file = DriveApp.getFileById(fileId);
+
+  const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+  const backupName = `${spreadsheet.getName()}_backup_${timestamp}`;
+
+  file.makeCopy(backupName, folder);
+
+  Logger.log("Backup created: " + backupName);
+}
