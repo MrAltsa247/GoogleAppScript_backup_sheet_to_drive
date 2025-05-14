@@ -38,3 +38,11 @@ Replace "YOUR_BACKUP_FOLDER_ID" with your actual folder ID
 Run the function backupSpreadsheet()
 
 Optionally, create a time-based trigger (e.g., daily at 2 AM)
+
+
+⚠️ Notes
+Backups are stored as .gsheet files (Google Spreadsheet copies)
+
+If needed, you can manually export as PDF/Excel with minor changes
+
+Use Triggers > Time-driven trigger to automate recurring backups
